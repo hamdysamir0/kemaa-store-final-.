@@ -1,0 +1,14 @@
+{
+  "name": "kema-store-ready",
+  "version": "1.0.0",
+  "description": "Kemaa Store full-stack website ready for deployment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^8.0.5"
+  }
+}

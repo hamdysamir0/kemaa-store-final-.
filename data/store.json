@@ -1,0 +1,387 @@
+{
+  "site": {
+    "name": "Kemaa Store",
+    "brand": "Kemaastore",
+    "description": "متجر جرابات وإكسسوارات موبايل بتشكيلة متنوعة من الأشكال والألوان، مع طلب سهل وسريع عبر واتساب.",
+    "phone": "01118245607",
+    "whatsapp": "01118245607",
+    "instagram": "https://www.instagram.com/kemaa.store?igsh=amRiYjNhNzNqOXFm",
+    "email": "info@kemaastore",
+    "location": "القاهرة، مصر",
+    "heroTitle": "جرابات وإكسسوارات موبايل بذوق مختلف",
+    "heroText": "اختَر من بين موديلات وتصميمات متنوعة، ولو حبيت شكل قريب من ذوقك نساعدك تختاره بسهولة من الموقع أو عبر واتساب.",
+    "delivery": "شحن داخل القاهرة والجيزة من 2 الي 4 يوم.",
+    "orderHint": "اكتب اسمك ورقمك ونوع الموبايل، وبعد تسجيل الطلب هتظهر لك رسالة واتساب جاهزة لتأكيد التفاصيل بسرعة."
+  },
+  "stats": [
+    {
+      "label": "موديلات معروضة",
+      "value": "17+"
+    },
+    {
+      "label": "طلب سهل",
+      "value": "24/7"
+    },
+    {
+      "label": "دعم واتساب",
+      "value": "مباشر"
+    },
+    {
+      "label": "مناطق شحن",
+      "value": "القاهره و الجيزه "
+    }
+  ],
+  "services": [
+    {
+      "icon": "📱",
+      "title": "جرابات مطبوعة وجاهزة",
+      "text": "جرابات بتصميمات وألوان متنوعة تناسب موديلات كثيرة من الهواتف."
+    },
+    {
+      "icon": "🎨",
+      "title": "اختيارات متنوعة حسب الذوق",
+      "text": "معظم المنتجات متاحة بتصميمات جاهزة، وفي بعض الحالات يمكن تنفيذ لمسات بسيطة حسب المتاح."
+    },
+    {
+      "icon": "🚚",
+      "title": "تجهيز وشحن سريع",
+      "text": "تأكيد سريع للطلبات مع متابعة مباشرة عبر واتساب لحد الاستلام."
+    },
+    {
+      "icon": "💬",
+      "title": "دعم قبل وبعد الطلب",
+      "text": "مساعدة في اختيار الشكل المناسب والرد على أي استفسار قبل وبعد الطلب."
+    }
+  ],
+  "offers": [
+    {
+      "title": "خصم الطلبات",
+      "description": "خصم 10% عند إرسال إثبات الطالب وقت الطلب.",
+      "price": "خصم ثابت",
+      "badge": "طلاب"
+    }
+  ],
+  "reviews": [
+    {
+      "name": "سارة",
+      "rating": 5,
+      "text": "الخامة ممتازة والتصميم طلع أحلى من الصورة، وكمان الرد كان سريع جداً."
+    },
+    {
+      "name": "أحمد",
+      "rating": 5,
+      "text": "طلبت جراب وعجبني الشكل والخامة، وكمان التغليف والرد كانوا ممتازين."
+    },
+    {
+      "name": "مريم",
+      "rating": 4,
+      "text": "عجبني تنوع التصميمات وسهولة الطلب من واتساب بعد تعبئة البيانات من الموقع."
+    },
+    {
+      "name": "يوسف",
+      "rating": 5,
+      "text": "التعامل محترم جداً، وتم تأكيد الطلب والمتابعة لحد الاستلام."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "إزاي أطلب من الموقع؟",
+      "answer": "اختر المنتج، اضغط اطلب الآن، واكتب الاسم ورقم الهاتف ونوع الموبايل. الموقع يسجل الطلب ثم يفتح لك رسالة واتساب جاهزة لإكمال التفاصيل بسرعة."
+    },
+    {
+      "question": "هل الجرابات متاحة لكل الموديلات؟",
+      "answer": "معظم التصميمات متاحة لعدد كبير من موديلات iPhone و Samsung و Xiaomi و Oppo وغيرها، ويفضل كتابة نوع الموبايل بدقة داخل الطلب."
+    },
+    {
+      "question": "هل ينفع أطلب شكل أو فكرة معينة؟",
+      "answer": "أيوه، لو عندك فكرة أو شكل قريب لذوقك ابعته لنا على واتساب، ونشوف المتاح ونرتب معاك أفضل اختيار."
+    },
+    {
+      "question": "ما طرق الدفع؟",
+      "answer": "الدفع يكون حسب الاتفاق عبر واتساب، ويمكن التنسيق على كاش عند الاستلام أو وسيلة مناسبة حسب المنطقة."
+    },
+    {
+      "question": "ما مدة التوصيل؟",
+      "answer": "داخل القاهرة والجيزة من 1 إلى 2 يوم عمل، وباقي المحافظات من 2 إلى 4 أيام عمل حسب شركة الشحن."
+    }
+  ],
+  "policies": [
+    {
+      "title": "مدة الاستبدال أو الاسترجاع",
+      "items": [
+        "يمكن طلب الاستبدال أو الاسترجاع خلال 7 أيام من تاريخ الاستلام.",
+        "يجب أن يكون المنتج في حالته الأصلية ومع العبوة إن وجدت.",
+        "المنتجات التي يتم تجهيزها بشكل خاص حسب الاتفاق لا تُسترجع إلا في حالة وجود عيب تصنيع واضح."
+      ]
+    },
+    {
+      "title": "حالات عدم القبول",
+      "items": [
+        "وجود تلف ناتج عن الاستخدام.",
+        "مرور أكثر من 7 أيام على الاستلام.",
+        "عدم توضيح سبب المشكلة أو عدم توافر بيانات الطلب."
+      ]
+    },
+    {
+      "title": "ملاحظات مهمة",
+      "items": [
+        "في حالة وجود خطأ من جهة المتجر يتم التنسيق على الحل المناسب بسرعة.",
+        "يفضل تصوير المنتج فور الاستلام عند وجود أي ملاحظة.",
+        "الدعم متاح دائماً عبر واتساب لمتابعة الطلبات."
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "space-earth",
+      "name": "جراب فضائي - الأرض والقمر",
+      "category": "تصميمات فضائية",
+      "image": "/assets/images/case-space-earth.jpeg",
+      "description": "تصميم هادئ بخلفية فضائية ولمسات ليلية مميزة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "جاهز للطلب",
+      "featured": true
+    },
+    {
+      "id": "night-moon",
+      "name": "جراب سماء الليل والقمر",
+      "category": "تصميمات فضائية",
+      "image": "/assets/images/case-night-moon.jpeg",
+      "description": "تصميمين بطابع قمري مناسبين لمحبي الألوان الداكنة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "مميز",
+      "featured": true
+    },
+    {
+      "id": "floral",
+      "name": "جراب زهور ملون",
+      "category": "تصميمات وردية",
+      "image": "/assets/images/case-floral.jpeg",
+      "description": "نقشات زهور بألوان زاهية ولمسة أنيقة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "الأكثر أناقة",
+      "featured": true
+    },
+    {
+      "id": "woven-luxury",
+      "name": "جراب فاخر بنقشة منسوجة",
+      "category": "جرابات فاخرة",
+      "image": "/assets/images/case-woven-luxury.jpeg",
+      "description": "شكل أنيق وإحساس عملي مع حماية جيدة للحواف والكاميرا.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "فاخر",
+      "featured": true
+    },
+    {
+      "id": "orange-ring",
+      "name": "جراب بحلقة ستاند",
+      "category": "جرابات عملية",
+      "image": "/assets/images/case-orange-ring.jpeg",
+      "description": "جراب عملي بحلقة خلفية تساعد على المسك والاستخدام اليومي.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "عملي",
+      "featured": false
+    },
+    {
+      "id": "custom-child",
+      "name": "جراب بورتريه طفل",
+      "category": "حسب الطلب",
+      "image": "/assets/images/case-custom-child.jpeg",
+      "description": "شكل لطيف مستوحى من الصور الشخصية للأطفال حسب المتاح.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "حسب الطلب",
+      "featured": false
+    },
+    {
+      "id": "custom-couple",
+      "name": "جراب كرتوني للزوجين",
+      "category": "حسب الطلب",
+      "image": "/assets/images/case-custom-couple.jpeg",
+      "description": "فكرة هدية لطيفة بشكل كرتوني أو صورة قريبة من ذوقك.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "هدية مميزة",
+      "featured": false
+    },
+    {
+      "id": "stitch-chain",
+      "name": "جراب Stitch مع سلسلة",
+      "category": "شخصيات كرتونية",
+      "image": "/assets/images/case-stitch-chain.jpeg",
+      "description": "جراب شفاف بحواف حماية وسلسلة يد بشكل مبهج.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "شخصيات",
+      "featured": true
+    },
+    {
+      "id": "bugs-bunny",
+      "name": "جراب Bugs Bunny جرافيتي",
+      "category": "شخصيات كرتونية",
+      "image": "/assets/images/case-bugs-bunny.jpeg",
+      "description": "تصميم جرافيتي شبابي مناسب لمحبي الرسومات المختلفة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "جديد",
+      "featured": false
+    },
+    {
+      "id": "elsa",
+      "name": "جراب Elsa للأطفال",
+      "category": "شخصيات كرتونية",
+      "image": "/assets/images/case-elsa.jpeg",
+      "description": "جراب شفاف لطيف بتصميم مناسب للأطفال ومحبي Frozen.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "للأطفال",
+      "featured": false
+    },
+    {
+      "id": "panda-pocket",
+      "name": "جراب باندا كيوت",
+      "category": "تصميمات كيوت",
+      "image": "/assets/images/case-panda-pocket.jpeg",
+      "description": "تصميمات باندا لطيفة بألوان هادئة ومحايدة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "كيوت",
+      "featured": false
+    },
+    {
+      "id": "panda-boba",
+      "name": "جراب باندا وبوبا",
+      "category": "تصميمات كيوت",
+      "image": "/assets/images/case-panda-boba.jpeg",
+      "description": "اختيار ممتع لمحبي الرسومات اللطيفه.",
+      "priceLabel": "السعر حسب النوع",
+      "featured": false
+    },
+    {
+      "id": "aesthetic-collage",
+      "name": "جراب صور عائليه ",
+      "category": "جراب",
+      "image": "/assets/images/case-aesthetic-collage.jpg",
+      "description": "جراب شفاف لاضافه صور عائليه او لقطه مفضله علي الجراب.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "جديد",
+      "featured": true
+    },
+    {
+      "id": "pink-lips-soft",
+      "name": "جراب وردي بطبعة شفاه",
+      "category": "وردي",
+      "image": "/assets/images/case-pink-lips-1.jpg",
+      "description": "تصميم وردي ناعم بطابع شبابي بسيط.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "جديد",
+      "featured": false
+    },
+    {
+      "id": "pink-lips-glossy",
+      "name": "جراب شفاه وردي لامع",
+      "category": "وردي",
+      "image": "/assets/images/case-pink-lips-2.jpg",
+      "description": "شكل لامع وجذاب مناسب لمحبي التفاصيل الجريئة الهادئة.",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "ستايل",
+      "featured": false
+    },
+    {
+      "id": "hawaii-collage",
+      "name": " بطباعه صيفي  ",
+      "category": "جراب",
+      "image": "/assets/images/WhatsApp Image 2026-03-31 at 21.52.17.jpeg",
+      "description": "    جراب شفاف لاضافه الصور المفضله  .",
+      "priceLabel": "السعر حسب النوع",
+      "badge": "صيفي",
+      "featured": true
+    }
+  ],
+  "gallery": [
+    {
+      "title": "جراب فضائي - الأرض والقمر",
+      "category": "فضائي",
+      "image": "/assets/images/case-space-earth.jpeg"
+    },
+    {
+      "title": "جراب سماء الليل والقمر",
+      "category": "فضائي",
+      "image": "/assets/images/case-night-moon.jpeg"
+    },
+    {
+      "title": "تشكيلة جرابات متنوعة",
+      "category": "تشكيلات",
+      "image": "/assets/images/cases-mix-collection.jpeg"
+    },
+    {
+      "title": "جرابات باندا",
+      "category": "كيوت",
+      "image": "/assets/images/case-panda-pocket.jpeg"
+    },
+    {
+      "title": "باندا وبوبا",
+      "category": "كيوت",
+      "image": "/assets/images/case-panda-boba.jpeg"
+    },
+    {
+      "title": "جراب زهور",
+      "category": "زهور",
+      "image": "/assets/images/case-floral.jpeg"
+    },
+    {
+      "title": "جراب فاخر",
+      "category": "فاخر",
+      "image": "/assets/images/case-woven-luxury.jpeg"
+    },
+    {
+      "title": "جراب بحلقة ستاند",
+      "category": "عملي",
+      "image": "/assets/images/case-orange-ring.jpeg"
+    },
+    {
+      "title": "جراب طفل مخصص",
+      "category": "مخصص",
+      "image": "/assets/images/case-custom-child.jpeg"
+    },
+    {
+      "title": "جراب زوجين كرتوني",
+      "category": "مخصص",
+      "image": "/assets/images/case-custom-couple.jpeg"
+    },
+    {
+      "title": "Stitch مع سلسلة",
+      "category": "شخصيات",
+      "image": "/assets/images/case-stitch-chain.jpeg"
+    },
+    {
+      "title": "Bugs Bunny",
+      "category": "شخصيات",
+      "image": "/assets/images/case-bugs-bunny.jpeg"
+    },
+    {
+      "title": "جراب صور عائلية",
+      "category": "مخصص",
+      "image": "/assets/images/case-family-custom.jpeg"
+    },
+    {
+      "title": "جراب Elsa",
+      "category": "شخصيات",
+      "image": "/assets/images/case-elsa.jpeg"
+    },
+    {
+      "title": "جراب كولاج هادئ",
+      "category": "كولاج",
+      "image": "/assets/images/case-aesthetic-collage.jpg"
+    },
+    {
+      "title": "جراب وردي بطبعة شفاه",
+      "category": "وردي",
+      "image": "/assets/images/case-pink-lips-1.jpg"
+    },
+    {
+      "title": "جراب شفاه وردي لامع",
+      "category": "وردي",
+      "image": "/assets/images/case-pink-lips-2.jpg"
+    },
+    {
+      "title": "جراب كولاج هاواي",
+      "category": "صيفي",
+      "image": "/assets/images/case-hawaii-collage.jpg"
+    }
+  ]
+}
