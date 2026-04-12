@@ -481,8 +481,8 @@ function renderContact() {
           <span class="badge">تواصل معنا</span>
           <h1 class="page-title">راسل المتجر من الموقع مباشرة</h1>
           <p>📍 ${escapeHtml(site.location)}</p>
-          <p>📞 <a href="tel:${site.phone}">${escapeHtml(site.phone)}</a></p>
-          <p>📧 <a href="mailto:${site.email}">${escapeHtml(site.email)}</a></p>
+          <p>📞 <a href="tel:${escapeHtml(site.phone)}">${escapeHtml(site.phone)}</a></p>
+          <p>📧 <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a></p>
           <p>💬 <a href="https://wa.me/${site.whatsapp}" target="_blank" rel="noreferrer">WhatsApp مباشر</a></p>
           <p class="form-note">${escapeHtml(site.delivery)}</p>
         </article>
@@ -517,20 +517,18 @@ function openOrderModal(productId) {
         <div class="modal-header">
           <div>
             <span class="badge">طلب منتج</span>
-            <h3>${escapeHtml(product.name)}</h3>
+            <h3 id="modalProductName">${escapeHtml(product.name)}</h3>
           </div>
           <button class="modal-close" id="closeModal" type="button">✕</button>
         </div>
         <p class="form-note">اكتب بياناتك، وسيتم إنشاء رسالة واتساب جاهزة بعد تسجيل الطلب.</p>
         <form class="order-form" id="orderForm" novalidate>
-          <input type="hidden" name="productId" value="${escapeHtml(product.id)}">
-          <input type="hidden" name="productName" value="${escapeHtml(product.name)}">
           <div class="form-row">
-            <input class="input" type="text" name="customerName" placeholder="الاسم" required>
-            <input class="input" type="text" name="phone" placeholder="رقم الهاتف" required>
+            <input class="input" type="text" id="cust_name" name="customerName" placeholder="الاسم" required>
+            <input class="input" type="text" id="cust_phone" name="phone" placeholder="رقم الهاتف" required>
           </div>
-          <input class="input" type="text" name="phoneModel" placeholder="نوع الموبايل / الموديل">
-          <textarea class="textarea" name="notes" placeholder="أي ملاحظات إضافية؟"></textarea>
+          <input class="input" type="text" id="cust_model" name="phoneModel" placeholder="نوع الموبايل / الموديل">
+          <textarea class="textarea" id="cust_notes" name="notes" placeholder="أي ملاحظات إضافية؟"></textarea>
           <button class="btn" type="submit">تأكيد الطلب</button>
           <div class="form-status" id="orderStatus"></div>
         </form>
@@ -562,32 +560,45 @@ async function bindOrderForm() {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const status = $('#orderStatus');
-    const formData = Object.fromEntries(new FormData(form).entries());
-    status.textContent = 'جاري تسجيل الطلب...';
-    status.className = 'form-status';
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const formData = {
+        name: $('#cust_name').value,
+        phone: $('#cust_phone').value,
+        model: $('#cust_model').value,
+        notes: $('#cust_notes').value,
+        productName: $('#modalProductName').innerText
+    };
+
+    if (!formData.name || !formData.phone) {
+        status.textContent = "برجاء كتابة الاسم ورقم الهاتف";
+        status.className = 'form-status error';
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'جاري تحويلك للواتساب...';
+
+    const whatsappMsg = `طلب جديد من: ${formData.name}%0Aالمنتج: ${formData.productName}%0Aالموديل: ${formData.model}%0Aرقم التليفون: ${formData.phone}%0Aملاحظات: ${formData.notes}`;
+    window.open(`https://wa.me/201033105944?text=${whatsappMsg}`, '_blank');
 
     try {
-      const response = await fetch('/api/orders', {
+      fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+            customerName: formData.name,
+            phone: formData.phone,
+            phoneModel: formData.model,
+            notes: formData.notes,
+            productName: formData.productName
+        })
       });
-      const data = await response.json();
+    } catch (e) { console.log("Email failed but WhatsApp is open."); }
 
-      if (!response.ok || !data.ok) {
-        throw new Error(data.message || 'حدث خطأ أثناء تسجيل الطلب.');
-      }
-
-      status.textContent = 'تم تسجيل الطلب. سيتم فتح واتساب الآن.';
-      status.className = 'form-status success';
-      setTimeout(() => {
-        window.open(data.whatsappUrl, '_blank');
+    setTimeout(() => {
         closeOrderModal();
-      }, 700);
-    } catch (error) {
-      status.textContent = error.message;
-      status.className = 'form-status error';
-    }
+    }, 2000);
   });
 }
 
