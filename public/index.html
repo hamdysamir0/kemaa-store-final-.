@@ -3,11 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kemaa Store | الرئيسية</title>
-  <meta name="description" content="Kemaa Store - متجر جرابات وإكسسوارات موبايل بصور حقيقية وخدمة طلب سريعة.">
+  <title>Kemaa Store | الموقع تحت الصيانة</title>
+  <meta name="description" content="Kemaa Store - متجر جرابات وإكسسوارات موبايل.">
   <link rel="stylesheet" href="/css/style.css">
+  
+  <style>
+    /* ستايل صفحة الصيانة */
+    .maintenance-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999; /* عشان يغطي أي حاجة وراه */
+        text-align: center;
+        font-family: sans-serif;
+        padding: 20px;
+    }
+    .maintenance-card {
+        background: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        max-width: 400px;
+    }
+    .maintenance-overlay h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .maintenance-overlay p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .dev-info {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+    .dev-name {
+        display: block;
+        font-weight: bold;
+        color: #d63384;
+        margin-bottom: 10px;
+    }
+    .wa-btn {
+        display: inline-block;
+        background-color: #25d366;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+  </style>
 </head>
 <body data-page="home">
+
+  <div class="maintenance-overlay">
+      <div class="maintenance-card">
+          <h1>الموقع تحت الصيانة حالياً 🛠️</h1>
+          <p>نعمل على تحديث المتجر لتقديم أفضل تجربة لكم.</p>
+          
+          <div class="dev-info">
+              <p>برجاء التواصل مع المطور:</p>
+              <span class="dev-name">Hamdy Samir</span>
+              <a href="https://wa.me/201033105944" class="wa-btn">تواصل عبر واتساب 💬</a>
+          </div>
+      </div>
+  </div>
   <div id="site-shell"></div>
   <main id="content"></main>
   <div id="site-footer"></div>
