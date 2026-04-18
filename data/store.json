@@ -1,387 +1,243 @@
-{
-  "site": {
-    "name": "Kemaa Store",
-    "brand": "Kemaastore",
-    "description": "متجر جرابات وإكسسوارات موبايل بتشكيلة متنوعة من الأشكال والألوان، مع طلب سهل وسريع عبر واتساب.",
-    "phone": "01505944090",
-    "whatsapp": "01505944090",
-    "instagram": "https://www.instagram.com/kemaa.store?igsh=amRiYjNhNzNqOXFm",
-    "email": "info@kemaastore",
-    "location": "القاهرة، مصر",
-    "heroTitle": "جرابات وإكسسوارات موبايل بذوق مختلف",
-    "heroText": "اختَر من بين موديلات وتصميمات متنوعة، ولو حبيت شكل قريب من ذوقك نساعدك تختاره بسهولة من الموقع أو عبر واتساب.",
-    "delivery": "شحن داخل القاهرة والجيزة من 2 الي 4 يوم.",
-    "orderHint": "اكتب اسمك ورقمك ونوع الموبايل، وبعد تسجيل الطلب هتظهر لك رسالة واتساب جاهزة لتأكيد التفاصيل بسرعة."
-  },
-  "stats": [
-    {
-      "label": "موديلات معروضة",
-      "value": "17+"
-    },
-    {
-      "label": "طلب سهل",
-      "value": "24/7"
-    },
-    {
-      "label": "دعم واتساب",
-      "value": "مباشر"
-    },
-    {
-      "label": "مناطق شحن",
-      "value": "القاهره و الجيزه "
-    }
-  ],
-  "services": [
-    {
-      "icon": "📱",
-      "title": "جرابات مطبوعة وجاهزة",
-      "text": "جرابات بتصميمات وألوان متنوعة تناسب موديلات كثيرة من الهواتف."
-    },
-    {
-      "icon": "🎨",
-      "title": "اختيارات متنوعة حسب الذوق",
-      "text": "معظم المنتجات متاحة بتصميمات جاهزة، وفي بعض الحالات يمكن تنفيذ لمسات بسيطة حسب المتاح."
-    },
-    {
-      "icon": "🚚",
-      "title": "تجهيز وشحن سريع",
-      "text": "تأكيد سريع للطلبات مع متابعة مباشرة عبر واتساب لحد الاستلام."
-    },
-    {
-      "icon": "💬",
-      "title": "دعم قبل وبعد الطلب",
-      "text": "مساعدة في اختيار الشكل المناسب والرد على أي استفسار قبل وبعد الطلب."
-    }
-  ],
-  "offers": [
-    {
-      "title": "خصم الطلبات",
-      "description": "خصم 10% عند إرسال إثبات الطالب وقت الطلب.",
-      "price": "خصم ثابت",
-      "badge": "طلاب"
-    }
-  ],
-  "reviews": [
-    {
-      "name": "سارة",
-      "rating": 5,
-      "text": "الخامة ممتازة والتصميم طلع أحلى من الصورة، وكمان الرد كان سريع جداً."
-    },
-    {
-      "name": "أحمد",
-      "rating": 5,
-      "text": "طلبت جراب وعجبني الشكل والخامة، وكمان التغليف والرد كانوا ممتازين."
-    },
-    {
-      "name": "مريم",
-      "rating": 4,
-      "text": "عجبني تنوع التصميمات وسهولة الطلب من واتساب بعد تعبئة البيانات من الموقع."
-    },
-    {
-      "name": "يوسف",
-      "rating": 5,
-      "text": "التعامل محترم جداً، وتم تأكيد الطلب والمتابعة لحد الاستلام."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "إزاي أطلب من الموقع؟",
-      "answer": "اختر المنتج، اضغط اطلب الآن، واكتب الاسم ورقم الهاتف ونوع الموبايل. الموقع يسجل الطلب ثم يفتح لك رسالة واتساب جاهزة لإكمال التفاصيل بسرعة."
-    },
-    {
-      "question": "هل الجرابات متاحة لكل الموديلات؟",
-      "answer": "معظم التصميمات متاحة لعدد كبير من موديلات iPhone و Samsung و Xiaomi و Oppo وغيرها، ويفضل كتابة نوع الموبايل بدقة داخل الطلب."
-    },
-    {
-      "question": "هل ينفع أطلب شكل أو فكرة معينة؟",
-      "answer": "أيوه، لو عندك فكرة أو شكل قريب لذوقك ابعته لنا على واتساب، ونشوف المتاح ونرتب معاك أفضل اختيار."
-    },
-    {
-      "question": "ما طرق الدفع؟",
-      "answer": "الدفع يكون حسب الاتفاق عبر واتساب، ويمكن التنسيق على كاش عند الاستلام أو وسيلة مناسبة حسب المنطقة."
-    },
-    {
-      "question": "ما مدة التوصيل؟",
-      "answer": "داخل القاهرة والجيزة من 1 إلى 2 يوم عمل، وباقي المحافظات من 2 إلى 4 أيام عمل حسب شركة الشحن."
-    }
-  ],
-  "policies": [
-    {
-      "title": "مدة الاستبدال أو الاسترجاع",
-      "items": [
-        "يمكن طلب الاستبدال أو الاسترجاع خلال 7 أيام من تاريخ الاستلام.",
-        "يجب أن يكون المنتج في حالته الأصلية ومع العبوة إن وجدت.",
-        "المنتجات التي يتم تجهيزها بشكل خاص حسب الاتفاق لا تُسترجع إلا في حالة وجود عيب تصنيع واضح."
-      ]
-    },
-    {
-      "title": "حالات عدم القبول",
-      "items": [
-        "وجود تلف ناتج عن الاستخدام.",
-        "مرور أكثر من 7 أيام على الاستلام.",
-        "عدم توضيح سبب المشكلة أو عدم توافر بيانات الطلب."
-      ]
-    },
-    {
-      "title": "ملاحظات مهمة",
-      "items": [
-        "في حالة وجود خطأ من جهة المتجر يتم التنسيق على الحل المناسب بسرعة.",
-        "يفضل تصوير المنتج فور الاستلام عند وجود أي ملاحظة.",
-        "الدعم متاح دائماً عبر واتساب لمتابعة الطلبات."
-      ]
-    }
-  ],
-  "products": [
-    {
-      "id": "space-earth",
-      "name": "جراب فضائي - الأرض والقمر",
-      "category": "تصميمات فضائية",
-      "image": "/assets/images/case-space-earth.jpeg",
-      "description": "تصميم هادئ بخلفية فضائية ولمسات ليلية مميزة.",
-      "priceLabel": "السعر 180",
-      "badge": "جاهز للطلب",
-      "featured": true
-    },
-    {
-      "id": "night-moon",
-      "name": "جراب سماء الليل والقمر",
-      "category": "تصميمات فضائية",
-      "image": "/assets/images/case-night-moon.jpeg",
-      "description": "تصميمين بطابع قمري مناسبين لمحبي الألوان الداكنة.",
-      "priceLabel": "السعر 180",
-      "badge": "مميز",
-      "featured": true
-    },
-    {
-      "id": "floral",
-      "name": "جراب زهور ملون",
-      "category": "تصميمات وردية",
-      "image": "/assets/images/case-floral.jpeg",
-      "description": "نقشات زهور بألوان زاهية ولمسة أنيقة.",
-      "priceLabel": "السعر 180",
-      "badge": "الأكثر أناقة",
-      "featured": true
-    },
-    {
-      "id": "woven-luxury",
-      "name": "جراب فاخر بنقشة منسوجة",
-      "category": "جرابات فاخرة",
-      "image": "/assets/images/case-woven-luxury.jpeg",
-      "description": "شكل أنيق وإحساس عملي مع حماية جيدة للحواف والكاميرا.",
-      "priceLabel": "السعر 180",
-      "badge": "فاخر",
-      "featured": true
-    },
-    {
-      "id": "orange-ring",
-      "name": "جراب بحلقة ستاند",
-      "category": "جرابات عملية",
-      "image": "/assets/images/case-orange-ring.jpeg",
-      "description": "جراب عملي بحلقة خلفية تساعد على المسك والاستخدام اليومي.",
-      "priceLabel": "السعر 180",
-      "badge": "عملي",
-      "featured": false
-    },
-    {
-      "id": "custom-child",
-      "name": "جراب بورتريه طفل",
-      "category": "حسب الطلب",
-      "image": "/assets/images/case-custom-child.jpeg",
-      "description": "شكل لطيف مستوحى من الصور الشخصية للأطفال حسب المتاح.",
-      "priceLabel": "السعر 250 ",
-      "badge": "حسب الطلب",
-      "featured": false
-    },
-    {
-      "id": "custom-couple",
-      "name": "جراب كرتوني للزوجين",
-      "category": "حسب الطلب",
-      "image": "/assets/images/case-custom-couple.jpeg",
-      "description": "فكرة هدية لطيفة بشكل كرتوني أو صورة قريبة من ذوقك.",
-      "priceLabel": "السعر 180",
-      "badge": "هدية مميزة",
-      "featured": false
-    },
-    {
-      "id": "stitch-chain",
-      "name": "جراب Stitch مع سلسلة",
-      "category": "شخصيات كرتونية",
-      "image": "/assets/images/case-stitch-chain.jpeg",
-      "description": "جراب شفاف بحواف حماية وسلسلة يد بشكل مبهج.",
-      "priceLabel": "السعر 180",
-      "badge": "شخصيات",
-      "featured": true
-    },
-    {
-      "id": "bugs-bunny",
-      "name": "جراب Bugs Bunny جرافيتي",
-      "category": "شخصيات كرتونية",
-      "image": "/assets/images/case-bugs-bunny.jpeg",
-      "description": "تصميم جرافيتي شبابي مناسب لمحبي الرسومات المختلفة.",
-      "priceLabel": "السعر 180",
-      "badge": "جديد",
-      "featured": false
-    },
-    {
-      "id": "elsa",
-      "name": "جراب Elsa للأطفال",
-      "category": "شخصيات كرتونية",
-      "image": "/assets/images/case-elsa.jpeg",
-      "description": "جراب شفاف لطيف بتصميم مناسب للأطفال ومحبي Frozen.",
-      "priceLabel": "السعر 180",
-      "badge": "للأطفال",
-      "featured": false
-    },
-    {
-      "id": "panda-pocket",
-      "name": "جراب باندا كيوت",
-      "category": "تصميمات كيوت",
-      "image": "/assets/images/case-panda-pocket.jpeg",
-      "description": "تصميمات باندا لطيفة بألوان هادئة ومحايدة.",
-      "priceLabel": "السعر 180",
-      "badge": "كيوت",
-      "featured": false
-    },
-    {
-      "id": "panda-boba",
-      "name": "جراب باندا وبوبا",
-      "category": "تصميمات كيوت",
-      "image": "/assets/images/case-panda-boba.jpeg",
-      "description": "اختيار ممتع لمحبي الرسومات اللطيفه.",
-      "priceLabel": "السعر 180",
-      "featured": false
-    },
-    {
-      "id": "aesthetic-collage",
-      "name": "جراب صور عائليه ",
-      "category": "جراب",
-      "image": "/assets/images/case-aesthetic-collage.jpg",
-      "description": "جراب شفاف لاضافه صور عائليه او لقطه مفضله علي الجراب.",
-      "priceLabel": "السعر 250",
-      "badge": "جديد",
-      "featured": true
-    },
-    {
-      "id": "pink-lips-soft",
-      "name": "جراب وردي بطبعة شفاه",
-      "category": "وردي",
-      "image": "/assets/images/case-pink-lips-1.jpg",
-      "description": "تصميم وردي ناعم بطابع شبابي بسيط.",
-      "priceLabel": "السعر 180",
-      "badge": "جديد",
-      "featured": false
-    },
-    {
-      "id": "pink-lips-glossy",
-      "name": "جراب شفاه وردي لامع",
-      "category": "وردي",
-      "image": "/assets/images/case-pink-lips-2.jpg",
-      "description": "شكل لامع وجذاب مناسب لمحبي التفاصيل الجريئة الهادئة.",
-      "priceLabel": "السعر 180",
-      "badge": "ستايل",
-      "featured": false
-    },
-    {
-      "id": "hawaii-collage",
-      "name": " بطباعه صيفي  ",
-      "category": "جراب",
-      "image": "/assets/images/WhatsApp Image 2026-03-31 at 21.52.17.jpeg",
-      "description": "    جراب شفاف لاضافه الصور المفضله لك .",
-      "priceLabel": "السعر 250",
-      "badge": "صيفي",
-      "featured": true
-    }
-  ],
-  "gallery": [
-    {
-      "title": "جراب فضائي - الأرض والقمر",
-      "category": "فضائي",
-      "image": "/assets/images/case-space-earth.jpeg"
-    },
-    {
-      "title": "جراب سماء الليل والقمر",
-      "category": "فضائي",
-      "image": "/assets/images/case-night-moon.jpeg"
-    },
-    {
-      "title": "تشكيلة جرابات متنوعة",
-      "category": "تشكيلات",
-      "image": "/assets/images/cases-mix-collection.jpeg"
-    },
-    {
-      "title": "جرابات باندا",
-      "category": "كيوت",
-      "image": "/assets/images/case-panda-pocket.jpeg"
-    },
-    {
-      "title": "باندا وبوبا",
-      "category": "كيوت",
-      "image": "/assets/images/case-panda-boba.jpeg"
-    },
-    {
-      "title": "جراب زهور",
-      "category": "زهور",
-      "image": "/assets/images/case-floral.jpeg"
-    },
-    {
-      "title": "جراب فاخر",
-      "category": "فاخر",
-      "image": "/assets/images/case-woven-luxury.jpeg"
-    },
-    {
-      "title": "جراب بحلقة ستاند",
-      "category": "عملي",
-      "image": "/assets/images/case-orange-ring.jpeg"
-    },
-    {
-      "title": "جراب طفل مخصص",
-      "category": "مخصص",
-      "image": "/assets/images/case-custom-child.jpeg"
-    },
-    {
-      "title": "جراب زوجين كرتوني",
-      "category": "مخصص",
-      "image": "/assets/images/case-custom-couple.jpeg"
-    },
-    {
-      "title": "Stitch مع سلسلة",
-      "category": "شخصيات",
-      "image": "/assets/images/case-stitch-chain.jpeg"
-    },
-    {
-      "title": "Bugs Bunny",
-      "category": "شخصيات",
-      "image": "/assets/images/case-bugs-bunny.jpeg"
-    },
-    {
-      "title": "جراب صور عائلية",
-      "category": "مخصص",
-      "image": "/assets/images/case-family-custom.jpeg"
-    },
-    {
-      "title": "جراب Elsa",
-      "category": "شخصيات",
-      "image": "/assets/images/case-elsa.jpeg"
-    },
-    {
-      "title": "جراب كولاج هادئ",
-      "category": "كولاج",
-      "image": "/assets/images/case-aesthetic-collage.jpg"
-    },
-    {
-      "title": "جراب وردي بطبعة شفاه",
-      "category": "وردي",
-      "image": "/assets/images/case-pink-lips-1.jpg"
-    },
-    {
-      "title": "جراب شفاه وردي لامع",
-      "category": "وردي",
-      "image": "/assets/images/case-pink-lips-2.jpg"
-    },
-    {
-      "title": "جراب كولاج هاواي",
-      "category": "صيفي",
-      "image": "/assets/images/case-hawaii-collage.jpg"
-    }
-  ]
+const state = {
+  siteData: null,
+  filteredCategory: 'الكل',
+  selectedProduct: null
+};
+
+const page = document.body.dataset.page || 'home';
+const contentRoot = document.getElementById('content');
+const modalRoot = document.getElementById('modal-root');
+
+const navItems = [
+  { key: 'home', href: 'index.html', label: 'الرئيسية' },
+  { key: 'products', href: 'products.html', label: 'المنتجات' },
+  { key: 'about', href: 'about.html', label: 'عنّا' },
+  { key: 'services', href: 'services.html', label: 'الخدمات' },
+  { key: 'offers', href: 'offers.html', label: 'العروض' },
+  { key: 'gallery', href: 'gallery.html', label: 'المعرض' },
+  { key: 'reviews', href: 'reviews.html', label: 'آراء العملاء' },
+  { key: 'faq', href: 'faq.html', label: 'الأسئلة' },
+  { key: 'policy', href: 'policy.html', label: 'الاستبدال' },
+  { key: 'contact', href: 'contact.html', label: 'تواصل' }
+];
+
+/**
+ * دالة توليد رابط واتساب احترافي يتوافق مع الماك والموبايل
+ */
+function getWhatsAppUrl(phone, text = '') {
+  // تنظيف الرقم من أي رموز
+  let cleanPhone = phone ? String(phone).replace(/\D/g, '') : '201505944090';
+  
+  // إذا كان الرقم يبدأ بـ 015 (صيغة محلية)، نحوله لصيغة دولية 2015
+  if (cleanPhone.startsWith('0')) {
+    cleanPhone = '20' + cleanPhone.substring(1);
+  } else if (!cleanPhone.startsWith('20')) {
+    cleanPhone = '20' + cleanPhone;
+  }
+
+  const encodedText = encodeURIComponent(text);
+  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedText}`;
 }
+
+/**
+ * تنفيذ عملية الفتح بطريقة "الفعل البشري" لتخطي الـ Popup Blocker
+ */
+function triggerWhatsApp(url) {
+  const hiddenLink = document.createElement('a');
+  hiddenLink.href = url;
+  hiddenLink.target = '_blank';
+  hiddenLink.rel = 'noreferrer';
+  document.body.appendChild(hiddenLink);
+  hiddenLink.click();
+  document.body.removeChild(hiddenLink);
+}
+
+function $(selector, root = document) { return root.querySelector(selector); }
+function $all(selector, root = document) { return [...root.querySelectorAll(selector)]; }
+
+function escapeHtml(value = '') {
+  return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
+function stars(rating) { return '★'.repeat(rating) + '☆'.repeat(5 - rating); }
+
+function buildHeader(site) {
+  const navLinks = navItems.map((item) => `<a class="${page === item.key ? 'active' : ''}" href="${item.href}">${item.label}</a>`).join('');
+  return `
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          <img src="/assets/images/logo.jpeg" alt="${site.brand}">
+          <div><div>${site.brand}</div><small>Mobile Accessories Store</small></div>
+        </a>
+        <button class="nav-toggle" id="navToggle">☰</button>
+        <nav class="nav-links" id="navLinks">${navLinks}</nav>
+      </div>
+    </header>`;
+}
+
+function buildFooter(site) {
+  const waUrl = getWhatsAppUrl(site.whatsapp);
+  return `
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>${site.brand}</h3>
+          <p class="muted">${site.description}</p>
+          <p>📍 ${site.location}</p>
+          <p>📞 <a href="tel:${site.phone}">${site.phone}</a></p>
+        </div>
+        <div>
+          <h3>روابط سريعة</h3>
+          <div class="footer-links">${navItems.slice(0, 6).map((item) => `<a href="${item.href}">${item.label}</a>`).join('')}</div>
+        </div>
+        <div>
+          <h3>اطلب الآن</h3>
+          <div class="footer-links">
+            <a href="${waUrl}" target="_blank">واتساب مباشر</a>
+            <a href="${site.instagram}" target="_blank">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="floating-actions">
+      <a class="floating-action instagram" href="${site.instagram}" target="_blank">📸</a>
+      <a class="floating-action whatsapp" href="javascript:void(0)" id="floatingWA">💬</a>
+    </div>`;
+}
+
+function pageShell(innerHtml) {
+  const { site } = state.siteData;
+  document.getElementById('site-shell').innerHTML = buildHeader(site);
+  contentRoot.innerHTML = innerHtml;
+  document.getElementById('site-footer').innerHTML = buildFooter(site);
+  bindNavToggle();
+  $('#floatingWA')?.addEventListener('click', () => triggerWhatsApp(getWhatsAppUrl(site.whatsapp)));
+}
+
+// --- مكونات الصفحات ---
+function productCard(product) {
+  return `
+    <article class="product-card">
+      <img src="${product.image}" alt="${escapeHtml(product.name)}">
+      <div class="product-body">
+        <div class="product-topline"><span class="badge">${escapeHtml(product.badge || 'جديد')}</span><small>${escapeHtml(product.category)}</small></div>
+        <h3>${escapeHtml(product.name)}</h3>
+        <p>${escapeHtml(product.description)}</p>
+        <div class="product-bottom">
+          <span class="price-label">${escapeHtml(product.priceLabel)}</span>
+          <button class="btn order-trigger" data-product-id="${escapeHtml(product.id)}">اطلب الآن</button>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderHome() {
+  const { site, stats, products, services, offers } = state.siteData;
+  const featured = products.filter(p => p.featured).slice(0, 4);
+  pageShell(`
+    <section class="hero page-section">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <h1>${escapeHtml(site.heroTitle)}</h1>
+          <p>${escapeHtml(site.heroText)}</p>
+          <div class="hero-actions"><a class="btn" href="products.html">تصفح المنتجات</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section"><div class="container"><div class="products-grid">${featured.map(productCard).join('')}</div></div></section>
+  `);
+}
+
+function renderProducts() {
+  const { products } = state.siteData;
+  pageShell(`
+    <section class="page-section">
+      <div class="container">
+        <div class="section-heading"><h2>كل المنتجات</h2></div>
+        <div class="products-grid">${products.map(productCard).join('')}</div>
+      </div>
+    </section>`);
+}
+
+function renderContact() {
+  const { site } = state.siteData;
+  pageShell(`
+    <section class="page-section">
+      <div class="container">
+        <h1>تواصل معنا</h1>
+        <p>واتساب: ${site.whatsapp}</p>
+        <button class="btn" id="directContactWA">راسلنا الآن</button>
+      </div>
+    </section>`);
+  $('#directContactWA')?.addEventListener('click', () => triggerWhatsApp(getWhatsAppUrl(site.whatsapp, "استفسار بخصوص المنتجات")));
+}
+
+// --- نظام المودال والطلب ---
+function openOrderModal(productId) {
+  const product = state.siteData.products.find(i => i.id === productId);
+  if (!product) return;
+  modalRoot.innerHTML = `
+    <div class="modal open" id="orderModal">
+      <div class="modal-dialog">
+        <div class="modal-header"><h3>طلب: ${escapeHtml(product.name)}</h3><button class="modal-close" id="closeModal">✕</button></div>
+        <form id="orderForm" class="order-form">
+          <input class="input" type="text" id="cust_name" placeholder="الاسم بالكامل" required>
+          <input class="input" type="text" id="cust_phone" placeholder="رقم الهاتف" required>
+          <input class="input" type="text" id="cust_model" placeholder="نوع موبايلك (مثلاً: iPhone 13)">
+          <textarea class="textarea" id="cust_notes" placeholder="أي ملاحظات؟"></textarea>
+          <button class="btn" type="submit">إرسال الطلب عبر واتساب</button>
+          <div id="orderStatus"></div>
+        </form>
+      </div>
+    </div>`;
+  $('#closeModal').onclick = () => modalRoot.innerHTML = '';
+  bindOrderForm(product.name);
+}
+
+function bindOrderForm(productName) {
+  $('#orderForm').onsubmit = (e) => {
+    e.preventDefault();
+    const name = $('#cust_name').value.trim();
+    const phone = $('#cust_phone').value.trim();
+    const model = $('#cust_model').value.trim() || 'غير محدد';
+    const notes = $('#cust_notes').value.trim() || 'لا يوجد';
+
+    if (!name || !phone) return;
+
+    const msg = `طلب جديد 🛒\n\n👤 الاسم: ${name}\n📱 الهاتف: ${phone}\n📦 المنتج: ${productName}\n📱 الموديل: ${model}\n📝 ملاحظات: ${notes}`;
+    const url = getWhatsAppUrl(state.siteData.site.whatsapp, msg);
+
+    triggerWhatsApp(url);
+    
+    $('#orderStatus').innerHTML = '<p class="form-status success">تم توجيهك للواتساب بنجاح!</p>';
+    setTimeout(() => modalRoot.innerHTML = '', 2000);
+  };
+}
+
+// --- التشغيل الأساسي ---
+function bindCommonInteractions() {
+  $all('.order-trigger').forEach(b => b.onclick = () => openOrderModal(b.dataset.productId));
+}
+
+function bindNavToggle() {
+  $('#navToggle').onclick = () => $('#navLinks').classList.toggle('open');
+}
+
+async function init() {
+  try {
+    const r = await fetch('/api/site-data');
+    state.siteData = await r.json();
+    
+    if (page === 'home') renderHome();
+    else if (page === 'products') renderProducts();
+    else if (page === 'contact') renderContact();
+    else renderHome(); // Default
+
+    bindCommonInteractions();
+  } catch (e) {
+    console.error("Initialization failed", e);
+  }
+}
+
+init();
