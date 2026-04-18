@@ -21,14 +21,22 @@ const navItems = [
   { key: 'contact', href: 'contact.html', label: 'تواصل' }
 ];
 
-// دالة مساعدة لتوليد رابط واتساب موثوق جداً
 function getWhatsAppUrl(phone, text = '') {
-  const cleanPhone = phone ? phone.replace(/\D/g, '') : '201505944090';
-  const encodedText = encodeURIComponent(text);
-  // استخدام api.whatsapp.com هو الأضمن لتطبيقات الـ Desktop
-  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedText}`;
-}
+  // تنظيف الرقم لضمان إنه يبدأ بـ 20
+  let cleanPhone = phone ? String(phone).replace(/\D/g, '') : '201505944090';
+  
+  // التأكد من الصيغة الدولية (لو بيبدأ بـ 0 نحوله لـ 20)
+  if (cleanPhone.startsWith('0')) {
+    cleanPhone = '20' + cleanPhone.substring(1);
+  } else if (!cleanPhone.startsWith('20')) {
+    cleanPhone = '20' + cleanPhone;
+  }
 
+  const encodedText = encodeURIComponent(text);
+  
+  // التعديل الجوهري هنا: استخدام whatsapp:// بدلاً من https://
+  return `whatsapp://send?phone=${cleanPhone}&text=${encodedText}`;
+}
 function $(selector, root = document) {
   return root.querySelector(selector);
 }
