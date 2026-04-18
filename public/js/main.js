@@ -580,7 +580,7 @@ async function bindOrderForm() {
     submitBtn.innerText = 'جاري تحويلك للواتساب...';
 
     const whatsappMsg = `طلب جديد من: ${formData.name}%0Aالمنتج: ${formData.productName}%0Aالموديل: ${formData.model}%0Aرقم التليفون: ${formData.phone}%0Aملاحظات: ${formData.notes}`;
-    window.open(`https://wa.me/201118245607?text=${whatsappMsg}`, '_blank');
+    window.open(`https://wa.me/01505944090?text=${whatsappMsg}`, '_blank');
 
     try {
       fetch('/api/orders', {
