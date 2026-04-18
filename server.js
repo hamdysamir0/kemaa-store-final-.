@@ -19,6 +19,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// وظيفة قراءة البيانات (مسموحة لأنها قراءة فقط)
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -35,27 +36,18 @@ function validateRequiredFields(fields) {
   return fields.every((field) => sanitizeText(field).length > 0);
 }
 
-/**
- * تعديل الدالة لتوليد رابط يتوافق مع الماك وتطبيقات الديسكتوب
- */
 function buildWhatsAppOrderLink(siteData, payload) {
-  // تنظيف الرقم لضمان الصيغة الدولية 20
-  let whatsappNumber = siteData.site ? String(siteData.site.whatsapp).replace(/\D/g, '') : "201505944090";
-  if (whatsappNumber.startsWith('0')) whatsappNumber = '20' + whatsappNumber.substring(1);
-
+  const whatsappNumber = siteData.site ? siteData.site.whatsapp : "201033105944";
   const lines = [
-    'طلب جديد من الموقع 🛒',
+    'السلام عليكم، أريد تأكيد طلب من موقع Kemaa Store.',
     `المنتج: ${payload.productName}`,
     `الاسم: ${payload.customerName}`,
     `رقم الهاتف: ${payload.phone}`,
     `نوع الموبايل: ${payload.phoneModel || 'غير محدد'}`,
     `ملاحظات: ${payload.notes || 'لا يوجد'}`
   ];
-  
   const encoded = encodeURIComponent(lines.join('\n'));
-  
-  // نرسل رابط whatsapp:// لضمان الفتح المباشر على الماك والديسكتوب
-  return `whatsapp://send?phone=${whatsappNumber}&text=${encoded}`;
+  return `https://wa.me/${whatsappNumber}?text=${encoded}`;
 }
 
 app.use(express.json());
@@ -67,11 +59,9 @@ app.get('/api/site-data', (_req, res) => {
   res.json(storeData);
 });
 
-// استقبال الأوردر وإرسال الإيميل
+// تعديل الـ Route بتاع الأوردرات (إيميل وواتساب فقط)
 app.post('/api/orders', async (req, res) => {
   const storeData = readJson(STORE_FILE);
-  
-  // تأكد من تطابق هذه الأسماء مع ما ترسله من ملف main.js
   const customerName = sanitizeText(req.body.customerName);
   const phone = sanitizeText(req.body.phone);
   const phoneModel = sanitizeText(req.body.phoneModel);
@@ -84,40 +74,41 @@ app.post('/api/orders', async (req, res) => {
 
   const order = { customerName, phone, phoneModel, notes, productName };
 
-  // 1. إرسال الإيميل
+  // 1. إرسال الإيميل (مهم جداً)
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER,
       subject: `🛒 أوردر جديد: ${customerName}`,
-      text: `أوردر جديد من Kemaa Store:\n\nالمنتج: ${productName}\nالاسم: ${customerName}\nالتليفون: ${phone}\nالموديل: ${phoneModel}\nملاحظات: ${notes}`
+      text: `منتج: ${productName}\nاسم: ${customerName}\nتليفون: ${phone}\nموديل: ${phoneModel}\nملاحظات: ${notes}`
     });
-    console.log("Email Sent Successfully to:", process.env.EMAIL_USER);
   } catch (err) {
     console.error("Email Error:", err);
-    // لا نوقف العملية إذا فشل الإيميل، لنسمح للعميل بإكمال الطلب عبر واتساب
   }
 
-  // 2. الرد ببيانات الواتساب (الرابط الجديد)
+  // 2. الرد ببيانات الواتساب
   res.json({
     ok: true,
-    message: 'تم تسجيل طلبك وجاري تحويلك للواتساب.',
+    message: 'تم تسجيل طلبك.',
     whatsappUrl: buildWhatsAppOrderLink(storeData, order)
   });
 });
 
+// تعديل الـ Route بتاع التواصل
 app.post('/api/contact', async (req, res) => {
   const { name, phone, subject, message } = req.body;
+
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER,
-      subject: `✉️ رسالة تواصل: ${name}`,
+      subject: `✉️ رسالة من: ${name}`,
       text: `الموضوع: ${subject}\nمن: ${name}\nتليفون: ${phone}\nالرسالة:\n${message}`
     });
   } catch (err) {
     console.error("Contact Email Error:", err);
   }
+
   res.json({ ok: true, message: 'وصلتنا رسالتك.' });
 });
 
@@ -125,6 +116,5 @@ app.get('/', (_req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.listen(PORT);
+
