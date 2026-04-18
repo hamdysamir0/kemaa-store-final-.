@@ -138,7 +138,7 @@
       "category": "تصميمات فضائية",
       "image": "/assets/images/case-space-earth.jpeg",
       "description": "تصميم هادئ بخلفية فضائية ولمسات ليلية مميزة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "جاهز للطلب",
       "featured": true
     },
@@ -148,7 +148,7 @@
       "category": "تصميمات فضائية",
       "image": "/assets/images/case-night-moon.jpeg",
       "description": "تصميمين بطابع قمري مناسبين لمحبي الألوان الداكنة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "مميز",
       "featured": true
     },
@@ -158,7 +158,7 @@
       "category": "تصميمات وردية",
       "image": "/assets/images/case-floral.jpeg",
       "description": "نقشات زهور بألوان زاهية ولمسة أنيقة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "الأكثر أناقة",
       "featured": true
     },
@@ -168,7 +168,7 @@
       "category": "جرابات فاخرة",
       "image": "/assets/images/case-woven-luxury.jpeg",
       "description": "شكل أنيق وإحساس عملي مع حماية جيدة للحواف والكاميرا.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "فاخر",
       "featured": true
     },
@@ -178,7 +178,7 @@
       "category": "جرابات عملية",
       "image": "/assets/images/case-orange-ring.jpeg",
       "description": "جراب عملي بحلقة خلفية تساعد على المسك والاستخدام اليومي.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "عملي",
       "featured": false
     },
@@ -198,7 +198,7 @@
       "category": "حسب الطلب",
       "image": "/assets/images/case-custom-couple.jpeg",
       "description": "فكرة هدية لطيفة بشكل كرتوني أو صورة قريبة من ذوقك.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "هدية مميزة",
       "featured": false
     },
@@ -208,7 +208,7 @@
       "category": "شخصيات كرتونية",
       "image": "/assets/images/case-stitch-chain.jpeg",
       "description": "جراب شفاف بحواف حماية وسلسلة يد بشكل مبهج.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "شخصيات",
       "featured": true
     },
@@ -218,7 +218,7 @@
       "category": "شخصيات كرتونية",
       "image": "/assets/images/case-bugs-bunny.jpeg",
       "description": "تصميم جرافيتي شبابي مناسب لمحبي الرسومات المختلفة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "جديد",
       "featured": false
     },
@@ -228,7 +228,7 @@
       "category": "شخصيات كرتونية",
       "image": "/assets/images/case-elsa.jpeg",
       "description": "جراب شفاف لطيف بتصميم مناسب للأطفال ومحبي Frozen.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "للأطفال",
       "featured": false
     },
@@ -238,7 +238,7 @@
       "category": "تصميمات كيوت",
       "image": "/assets/images/case-panda-pocket.jpeg",
       "description": "تصميمات باندا لطيفة بألوان هادئة ومحايدة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "كيوت",
       "featured": false
     },
@@ -248,7 +248,7 @@
       "category": "تصميمات كيوت",
       "image": "/assets/images/case-panda-boba.jpeg",
       "description": "اختيار ممتع لمحبي الرسومات اللطيفه.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "featured": false
     },
     {
@@ -267,7 +267,7 @@
       "category": "وردي",
       "image": "/assets/images/case-pink-lips-1.jpg",
       "description": "تصميم وردي ناعم بطابع شبابي بسيط.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "جديد",
       "featured": false
     },
@@ -277,7 +277,7 @@
       "category": "وردي",
       "image": "/assets/images/case-pink-lips-2.jpg",
       "description": "شكل لامع وجذاب مناسب لمحبي التفاصيل الجريئة الهادئة.",
-      "priceLabel": "السعر حسب النوع",
+      "priceLabel": "السعر 180",
       "badge": "ستايل",
       "featured": false
     },
