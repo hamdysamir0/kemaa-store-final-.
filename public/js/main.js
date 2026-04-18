@@ -554,7 +554,7 @@ function bindOrderButtons() {
 }
 
 /**
- * دالة معالجة فورم الطلب (معدلة لحل مشكلة الواتساب)
+ * دالة معالجة فورم الطلب (معدلة لحل مشكلة الواتساب نهائياً)
  */
 async function bindOrderForm() {
   const form = $('#orderForm');
@@ -579,23 +579,28 @@ async function bindOrderForm() {
         return;
     }
 
-    // تجهيز الرسالة
-    const text = `طلب جديد من الموقع 🛒%0A%0A👤 *الاسم:* ${formData.name}%0A📱 *رقم الهاتف:* ${formData.phone}%0A📦 *المنتج:* ${formData.productName}%0A📱 *موديل الجهاز:* ${formData.model}%0A📝 *ملاحظات:* ${formData.notes}`;
+    // تجهيز النص الخام
+    const rawMsg = `طلب جديد من الموقع 🛒\n\n👤 *الاسم:* ${formData.name}\n📱 *رقم الهاتف:* ${formData.phone}\n📦 *المنتج:* ${formData.productName}\n📱 *موديل الجهاز:* ${formData.model}\n📝 *ملاحظات:* ${formData.notes}`;
     
-    // رقم الواتساب من البيانات أو افتراضي
+    // الحل النهائي: استخدام encodeURIComponent لتحويل النص كاملاً بما فيه السطور الجديدة والرموز العربية
+    const encodedMsg = encodeURIComponent(rawMsg);
+    
+    // رقم الواتساب بالصيغة الدولية بدون + (مثل: 201505944090)
     const whatsappNumber = state.siteData.site.whatsapp || '201505944090'; 
-    const waUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+    
+    // الرابط النهائي الموثوق
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
 
-    // تنفيذ الفتح فوراً قبل أي عملية fetch لضمان عدم حظر المتصفح للنافذة
+    // فتح الرابط فوراً (الإجراء الأساسي) لضمان عدم حظر المتصفح
     window.open(waUrl, '_blank');
 
-    // إظهار حالة النجاح
+    // تحديث الواجهة
     submitBtn.disabled = true;
     submitBtn.innerText = 'تم تحويلك للواتساب...';
     status.textContent = 'جاري تسجيل الطلب وتوجيهك...';
     status.className = 'form-status success';
 
-    // تسجيل الطلب في الخلفية (اختياري)
+    // تسجيل الطلب في السيرفر (إجراء خلفي)
     try {
       fetch('/api/orders', {
         method: 'POST',
@@ -608,7 +613,9 @@ async function bindOrderForm() {
             productName: formData.productName
         })
       });
-    } catch (e) { console.warn("API Error, but WhatsApp is triggered."); }
+    } catch (e) { 
+      console.warn("Server logging failed, but WhatsApp was triggered."); 
+    }
 
     setTimeout(() => {
         closeOrderModal();
