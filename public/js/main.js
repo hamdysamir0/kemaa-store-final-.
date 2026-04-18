@@ -21,6 +21,14 @@ const navItems = [
   { key: 'contact', href: 'contact.html', label: 'تواصل' }
 ];
 
+// دالة مساعدة لتوليد رابط واتساب موثوق
+function getWhatsAppUrl(phone, text = '') {
+  const cleanPhone = phone ? phone.replace(/\D/g, '') : '201505944090';
+  const encodedText = encodeURIComponent(text);
+  // استخدام الرابط الرسمي الكامل لضمان التوافق مع تطبيقات Desktop
+  return `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedText}`;
+}
+
 function $(selector, root = document) {
   return root.querySelector(selector);
 }
@@ -65,6 +73,7 @@ function buildHeader(site) {
 }
 
 function buildFooter(site) {
+  const waUrl = getWhatsAppUrl(site.whatsapp);
   return `
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -84,7 +93,7 @@ function buildFooter(site) {
         <div>
           <h3>اطلب الآن</h3>
           <div class="footer-links">
-            <a href="https://wa.me/${site.whatsapp}" target="_blank" rel="noreferrer">واتساب مباشر</a>
+            <a href="${waUrl}" target="_blank" rel="noreferrer">واتساب مباشر</a>
             <a href="${site.instagram}" target="_blank" rel="noreferrer">Instagram</a>
             <a href="contact.html">نموذج التواصل</a>
           </div>
@@ -93,7 +102,7 @@ function buildFooter(site) {
     </footer>
     <div class="floating-actions">
       <a class="floating-action instagram" href="${site.instagram}" target="_blank" rel="noreferrer" aria-label="Instagram">📸</a>
-      <a class="floating-action whatsapp" href="https://wa.me/${site.whatsapp}" target="_blank" rel="noreferrer" aria-label="WhatsApp">💬</a>
+      <a class="floating-action whatsapp" href="${waUrl}" target="_blank" rel="noreferrer" aria-label="WhatsApp">💬</a>
     </div>
   `;
 }
@@ -474,6 +483,7 @@ function renderPolicy() {
 
 function renderContact() {
   const { site } = state.siteData;
+  const waUrl = getWhatsAppUrl(site.whatsapp);
   pageShell(`
     <section class="page-section">
       <div class="container contact-grid">
@@ -483,7 +493,7 @@ function renderContact() {
           <p>📍 ${escapeHtml(site.location)}</p>
           <p>📞 <a href="tel:${escapeHtml(site.phone)}">${escapeHtml(site.phone)}</a></p>
           <p>📧 <a href="mailto:${escapeHtml(site.email)}">${escapeHtml(site.email)}</a></p>
-          <p>💬 <a href="https://wa.me/${site.whatsapp}" target="_blank" rel="noreferrer">WhatsApp مباشر</a></p>
+          <p>💬 <a href="${waUrl}" target="_blank" rel="noreferrer">WhatsApp مباشر</a></p>
           <p class="form-note">${escapeHtml(site.delivery)}</p>
         </article>
         <article class="contact-card">
@@ -554,7 +564,7 @@ function bindOrderButtons() {
 }
 
 /**
- * دالة معالجة فورم الطلب (معدلة لحل مشكلة الواتساب نهائياً)
+ * دالة معالجة فورم الطلب - النسخة النهائية الموثوقة
  */
 async function bindOrderForm() {
   const form = $('#orderForm');
@@ -579,28 +589,21 @@ async function bindOrderForm() {
         return;
     }
 
-    // تجهيز النص الخام
-    const rawMsg = `طلب جديد من الموقع 🛒\n\n👤 *الاسم:* ${formData.name}\n📱 *رقم الهاتف:* ${formData.phone}\n📦 *المنتج:* ${formData.productName}\n📱 *موديل الجهاز:* ${formData.model}\n📝 *ملاحظات:* ${formData.notes}`;
+    // تجهيز الرسالة
+    const msg = `طلب جديد من الموقع 🛒\n\n👤 *الاسم:* ${formData.name}\n📱 *رقم الهاتف:* ${formData.phone}\n📦 *المنتج:* ${formData.productName}\n📱 *موديل الجهاز:* ${formData.model}\n📝 *ملاحظات:* ${formData.notes}`;
     
-    // الحل النهائي: استخدام encodeURIComponent لتحويل النص كاملاً بما فيه السطور الجديدة والرموز العربية
-    const encodedMsg = encodeURIComponent(rawMsg);
-    
-    // رقم الواتساب بالصيغة الدولية بدون + (مثل: 201505944090)
-    const whatsappNumber = state.siteData.site.whatsapp || '201505944090'; 
-    
-    // الرابط النهائي الموثوق
-    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
+    // إنشاء الرابط باستخدام الصيغة الكاملة التي تعمل على الماك والموبايل
+    const waUrl = getWhatsAppUrl(state.siteData.site.whatsapp, msg);
 
-    // فتح الرابط فوراً (الإجراء الأساسي) لضمان عدم حظر المتصفح
+    // فتح الرابط
     window.open(waUrl, '_blank');
 
     // تحديث الواجهة
     submitBtn.disabled = true;
-    submitBtn.innerText = 'تم تحويلك للواتساب...';
-    status.textContent = 'جاري تسجيل الطلب وتوجيهك...';
+    submitBtn.innerText = 'تم التحويل...';
+    status.textContent = 'جاري التوجيه للواتساب...';
     status.className = 'form-status success';
 
-    // تسجيل الطلب في السيرفر (إجراء خلفي)
     try {
       fetch('/api/orders', {
         method: 'POST',
@@ -614,7 +617,7 @@ async function bindOrderForm() {
         })
       });
     } catch (e) { 
-      console.warn("Server logging failed, but WhatsApp was triggered."); 
+      console.warn("API logging skipped."); 
     }
 
     setTimeout(() => {
