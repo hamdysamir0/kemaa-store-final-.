@@ -553,6 +553,9 @@ function bindOrderButtons() {
   });
 }
 
+/**
+ * دالة معالجة فورم الطلب (معدلة لحل مشكلة الواتساب)
+ */
 async function bindOrderForm() {
   const form = $('#orderForm');
   if (!form) return;
@@ -563,10 +566,10 @@ async function bindOrderForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
 
     const formData = {
-        name: $('#cust_name').value,
-        phone: $('#cust_phone').value,
-        model: $('#cust_model').value,
-        notes: $('#cust_notes').value,
+        name: $('#cust_name').value.trim(),
+        phone: $('#cust_phone').value.trim(),
+        model: $('#cust_model').value.trim() || 'غير محدد',
+        notes: $('#cust_notes').value.trim() || 'لا توجد',
         productName: $('#modalProductName').innerText
     };
 
@@ -576,12 +579,23 @@ async function bindOrderForm() {
         return;
     }
 
+    // تجهيز الرسالة
+    const text = `طلب جديد من الموقع 🛒%0A%0A👤 *الاسم:* ${formData.name}%0A📱 *رقم الهاتف:* ${formData.phone}%0A📦 *المنتج:* ${formData.productName}%0A📱 *موديل الجهاز:* ${formData.model}%0A📝 *ملاحظات:* ${formData.notes}`;
+    
+    // رقم الواتساب من البيانات أو افتراضي
+    const whatsappNumber = state.siteData.site.whatsapp || '201505944090'; 
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+    // تنفيذ الفتح فوراً قبل أي عملية fetch لضمان عدم حظر المتصفح للنافذة
+    window.open(waUrl, '_blank');
+
+    // إظهار حالة النجاح
     submitBtn.disabled = true;
-    submitBtn.innerText = 'جاري تحويلك للواتساب...';
+    submitBtn.innerText = 'تم تحويلك للواتساب...';
+    status.textContent = 'جاري تسجيل الطلب وتوجيهك...';
+    status.className = 'form-status success';
 
-    const whatsappMsg = `طلب جديد من: ${formData.name}%0Aالمنتج: ${formData.productName}%0Aالموديل: ${formData.model}%0Aرقم التليفون: ${formData.phone}%0Aملاحظات: ${formData.notes}`;
-    window.open(`https://wa.me/01505944090?text=${whatsappMsg}`, '_blank');
-
+    // تسجيل الطلب في الخلفية (اختياري)
     try {
       fetch('/api/orders', {
         method: 'POST',
@@ -594,11 +608,11 @@ async function bindOrderForm() {
             productName: formData.productName
         })
       });
-    } catch (e) { console.log("Email failed but WhatsApp is open."); }
+    } catch (e) { console.warn("API Error, but WhatsApp is triggered."); }
 
     setTimeout(() => {
         closeOrderModal();
-    }, 2000);
+    }, 2500);
   });
 }
 
@@ -671,7 +685,8 @@ async function init() {
     state.siteData = await response.json();
     renderPage();
   } catch (error) {
-    contentRoot.innerHTML = '<div class="container page-section"><div class="hero-card">تعذر تحميل بيانات الموقع حالياً.</div></div>';
+    const root = document.getElementById('content');
+    if(root) root.innerHTML = '<div class="container page-section"><div class="hero-card">تعذر تحميل بيانات الموقع حالياً.</div></div>';
     console.error(error);
   }
 }
