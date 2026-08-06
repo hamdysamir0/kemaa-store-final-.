@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -10,16 +12,32 @@ const PUBLIC_DIR = path.join(ROOT, 'public');
 const DATA_DIR = path.join(ROOT, 'data');
 const STORE_FILE = path.join(DATA_DIR, 'store.json');
 
-// إعداد "الناقل" لإرسال الإيميلات
+// بيانات الإيميل (fallback لو .env مش موجود)
+const EMAIL_USER = process.env.EMAIL_USER || "youremail@gmail.com";
+const EMAIL_PASS = process.env.EMAIL_PASS || "your_app_password";
+const EMAIL_RECEIVER = process.env.EMAIL_RECEIVER || EMAIL_USER;
+
+// إعداد الإيميل
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
+    user: EMAIL_USER,
+    pass: EMAIL_PASS
   }
 });
 
-// وظيفة قراءة البيانات (مسموحة لأنها قراءة فقط)
+// اختبار الاتصال بالإيميل أول ما السيرفر يشتغل
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("❌ Email Config Error:", error);
+  } else {
+    console.log("✅ Email Server Ready");
+  }
+});
+
+// قراءة البيانات
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -54,14 +72,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(PUBLIC_DIR));
 
+// API بيانات الموقع
 app.get('/api/site-data', (_req, res) => {
   const storeData = readJson(STORE_FILE);
   res.json(storeData);
 });
 
-// تعديل الـ Route بتاع الأوردرات (إيميل وواتساب فقط)
+// أوردر جديد
 app.post('/api/orders', async (req, res) => {
   const storeData = readJson(STORE_FILE);
+
   const customerName = sanitizeText(req.body.customerName);
   const phone = sanitizeText(req.body.phone);
   const phoneModel = sanitizeText(req.body.phoneModel);
@@ -74,19 +94,27 @@ app.post('/api/orders', async (req, res) => {
 
   const order = { customerName, phone, phoneModel, notes, productName };
 
-  // 1. إرسال الإيميل (مهم جداً)
+  // إرسال الإيميل
   try {
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER,
+      from: `"Kemaa Store" <${EMAIL_USER}>`,
+      to: EMAIL_RECEIVER,
       subject: `🛒 أوردر جديد: ${customerName}`,
-      text: `منتج: ${productName}\nاسم: ${customerName}\nتليفون: ${phone}\nموديل: ${phoneModel}\nملاحظات: ${notes}`
+      text: `
+منتج: ${productName}
+اسم: ${customerName}
+تليفون: ${phone}
+موديل: ${phoneModel}
+ملاحظات: ${notes}
+      `
     });
+
+    console.log("✅ Email Sent Successfully");
   } catch (err) {
-    console.error("Email Error:", err);
+    console.error("❌ Email Error:", err);
   }
 
-  // 2. الرد ببيانات الواتساب
+  // واتساب
   res.json({
     ok: true,
     message: 'تم تسجيل طلبك.',
@@ -94,27 +122,38 @@ app.post('/api/orders', async (req, res) => {
   });
 });
 
-// تعديل الـ Route بتاع التواصل
+// تواصل
 app.post('/api/contact', async (req, res) => {
   const { name, phone, subject, message } = req.body;
 
   try {
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_RECEIVER || process.env.EMAIL_USER,
+      from: `"Kemaa Store" <${EMAIL_USER}>`,
+      to: EMAIL_RECEIVER,
       subject: `✉️ رسالة من: ${name}`,
-      text: `الموضوع: ${subject}\nمن: ${name}\nتليفون: ${phone}\nالرسالة:\n${message}`
+      text: `
+الموضوع: ${subject}
+من: ${name}
+تليفون: ${phone}
+
+الرسالة:
+${message}
+      `
     });
+
+    console.log("✅ Contact Email Sent");
   } catch (err) {
-    console.error("Contact Email Error:", err);
+    console.error("❌ Contact Email Error:", err);
   }
 
   res.json({ ok: true, message: 'وصلتنا رسالتك.' });
 });
 
+// الصفحة الرئيسية
 app.get('/', (_req, res) => {
   res.sendFile(path.join(PUBLIC_DIR, 'index.html'));
 });
 
-app.listen(PORT);
-
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
